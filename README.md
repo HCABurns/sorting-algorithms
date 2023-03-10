@@ -15,9 +15,9 @@ Alogithms will be tested by using execution time. The algorithms will be tested 
 The algorithms that have been chosen are a mix of the most commonly used sorting algorithms. A variety of sorting methods are being tested, such as: partitioning, merging, insertion, exchange, and selection. Algorithms will be tested using iterative and recursive methods if available to compare if there is any differences.
 
 Algorithms that have been implemented are:
-    * Bubble sort
-    * Bubble sort with early exit
-    * Selection sort
+* Bubble sort
+* Bubble sort with early exit
+* Selection sort
 
 ## Results
 
