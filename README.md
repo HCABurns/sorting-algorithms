@@ -4,7 +4,7 @@ This is a project to create and evaluate the speed of different algorithms with 
 
 ## What is a sorting algorithm?
 
-A sorting algoirthm is an alogirthm that will order the elements of a list. Sorting algorithms are often used for lists of values but they can be used for any object using that objects comparison operator. An example of this is strings, they can be organised alphabetically using the ASCII value of characters. Each algorithm are associated with a time and space complexity. There are 3 time complexity values that are used to identify the performance of the algorithm and this is: best case, average case, and worst case. This relates to the amount of time the algorithm will take to order a list based on the input in related to the size of the list. It is given in the form of big o notation where n is the length of the list (O(n)). 
+A sorting algoirthm is an alogirthm that will order the elements of a list. Sorting algorithms are often used for lists of values but they can be used for any object using that objects comparison operator. An example of this is strings, they can be organised alphabetically using the ASCII value of characters. Algorithms are associated with a time and space complexity. There are 3 time complexity values that are used to identify the performance of the algorithm and these are: best case, average case, and worst case. This relates to the amount of time the algorithm will take to order a list based on the input in related to the size of the list. It is given in the form of big o notation where n is the length of the list (O(n)). 
 
 ## How will algorithms be tested?
 
