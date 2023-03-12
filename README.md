@@ -18,6 +18,8 @@ Algorithms that have been implemented are:
 * Bubble sort
 * Bubble sort with early exit
 * Selection sort
+* Merge Sort (Recursive)
+* Quick sort (Recursive)
 
 ## Results
 
