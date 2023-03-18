@@ -24,8 +24,10 @@ public class Main {
         insertionSort.sort(tmp);
         System.out.println(Arrays.toString(tmp));
 
-
-
+        tmp = arr.clone();
+        mergeSort mergeSort = new mergeSort();
+        mergeSort.sort(tmp);
+        System.out.println(Arrays.toString(tmp));
 
     }
 }
