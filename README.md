@@ -20,6 +20,8 @@ Algorithms that have been implemented are:
 * Selection sort
 * Merge Sort (Recursive)
 * Quick sort (Recursive)
+* Tree Sort (Allows duplicates through count variable)
+* Counting sort
 
 ## Results
 
