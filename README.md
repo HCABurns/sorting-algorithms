@@ -19,8 +19,9 @@ Algorithms that have been implemented are:
 * Bubble sort with early exit (Python, Java, C++)
 * Selection sort (Python, Java)
 * Merge Sort (Recursive) (Python, Java)
+* Merge Sort (Iterative) (Python)
 * Quick sort (Recursive) (Python, Java)
-* Tree Sort (Allows duplicates through count variable) (Python)
+* Tree Sort (Allows duplicates through count variable) (Python, Java)
 * Counting sort (Python)
 
 ## Results

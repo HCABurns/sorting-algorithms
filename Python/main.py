@@ -4,15 +4,16 @@ from bubbleSort import bubbleSortEarlyExit
 from insertionSort import insertionSort
 from selectionSort import selectionSort
 from mergeSort import mergeSort
+from mergeSort import mergeSortIterative
 from quickSort import quickSort
 from dataGenerator import generateDataset
 import copy
 
-funcs = [bubbleSort,bubbleSortEarlyExit,insertionSort,selectionSort,mergeSort,quickSort]
+funcs = [bubbleSort,bubbleSortEarlyExit,insertionSort,selectionSort,mergeSort,mergeSortIterative,quickSort]
 
 if __name__ == "__main__":
     #Generate array
-    dataSize = 25000
+    dataSize = 999
     minValue = 0
     maxValue = 100000
     arr = generateDataset(dataSize,minValue,maxValue) 
@@ -22,7 +23,7 @@ if __name__ == "__main__":
         start = time.time()
         if func.__name__ == "quickSort":
             if dataSize<=1000:
-                func(copy.deepcopy(arr),0,len(a)-1)
+                func(copy.deepcopy(arr),0,len(arr)-1)
         else:
             sort = func(copy.deepcopy(arr))
         end = time.time()

@@ -63,7 +63,44 @@ def mergeSortIterative(arr):
     ------------
     arr - Array returned.
     """
-    pass
+    if len(arr) <= 1:
+        return arr
+    
+    n = len(arr)
+    size = 1
+    while size < n:
+        l = 0
+        while l < n:
+            m = l + size
+            r = min(l + 2*size, n)
+            if m < r:
+                merge(arr, l, m, r)
+            l += 2*size
+        size *= 2
+    return arr
+
+
+def merge(arr,l,m,r):
+    """
+    This is the code that is used to merge the arrays together.
+    """
+    i = l
+    j = m
+    merged = []
+    while i < m and j < r:
+        if arr[i] <= arr[j]:
+            merged.append(arr[i])
+            i += 1
+        else:
+            merged.append(arr[j])
+            j += 1
+    while i < m:
+        merged.append(arr[i])
+        i += 1
+    while j < r:
+        merged.append(arr[j])
+        j += 1
+    arr[l:r] = merged    
 
 
 def basicTestHarness():
