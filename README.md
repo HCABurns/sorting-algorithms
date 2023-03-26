@@ -20,7 +20,7 @@ Algorithms that have been implemented are:
 * Selection sort (Python, Java)
 * Merge Sort (Recursive) (Python, Java)
 * Merge Sort (Iterative) (Python)
-* Quick sort (Recursive) (Python, Java)
+* Quick sort (Recursive) (Python)
 * Tree Sort (Allows duplicates through count variable) (Python, Java)
 * Counting sort (Python)
 
