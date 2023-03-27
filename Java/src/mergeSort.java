@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 public class mergeSort {
 
     public void sort(int[] arr){
@@ -34,6 +37,49 @@ public class mergeSort {
         }
     }
 
+    public void iterativeSort(int arr[]){
+
+        if (arr.length <= 1) {
+            return;
+        }
+        int n = arr.length;
+        int size = 1;
+        while (size < n) {
+            int left = 0;
+            while (left < n) {
+                int mid = left + size;
+                int right = Math.min(left + 2 * size, n);
+                if (mid < right) {
+                    int i = left;
+                    int j = mid;
+                    List<Integer> merged = new ArrayList<>();
+                    while (i < mid && j < right) {
+                        if (arr[i] <= arr[j]) {
+                            merged.add(arr[i]);
+                            i++;
+                        } else {
+                            merged.add(arr[j]);
+                            j++;
+                        }
+                    }
+                    while (i < mid) {
+                        merged.add(arr[i]);
+                        i++;
+                    }
+                    while (j < right) {
+                        merged.add(arr[j]);
+                        j++;
+                    }
+                    for (int k = 0; k < merged.size(); k++) {
+                        arr[left + k] = merged.get(k);
+                    }
+                }
+                left += 2 * size;
+            }
+            size *= 2;
+        }
+
+    }
 
 
     public static void main(String[] args) {
@@ -43,6 +89,8 @@ public class mergeSort {
         mergeSort.sort(arr);
         System.out.println(Arrays.toString(arr));
 
-
+        arr = new int[]{3,6,3,2,6,8,4,2,1,45,3,56,657};
+        mergeSort.iterativeSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
