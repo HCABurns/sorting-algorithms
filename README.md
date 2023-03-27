@@ -17,7 +17,7 @@ The algorithms that have been chosen are a mix of the most commonly used sorting
 Algorithms that have been implemented are:
 * Bubble sort (Python, Java, C++)
 * Bubble sort with early exit (Python, Java, C++)
-* Selection sort (Python, Java)
+* Selection sort (Python, Java, C++)
 * Merge Sort (Recursive) (Python, Java)
 * Merge Sort (Iterative) (Python, Java)
 * Quick sort (Recursive) (Python)
