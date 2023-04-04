@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
 
-    public static int[] generateArr(){
+    static int[] generateArr(){
 
         int[] arr = new int[2000];
         Random random = new Random();
@@ -25,40 +23,36 @@ public class Main {
         Arrays.sort(sorted);
 
         System.out.println("Bubble sort: ");
-        bubbleSort bubble = new bubbleSort();
-        bubble.bubbleSort(tmp);
+        BubbleSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
         System.out.println("Bubble sort with early exit: ");
         tmp = arr.clone();
-        bubble.bubbleSortEarlyExit(tmp);
+        BubbleSort.sortEarlyExit(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
         System.out.println("Selection sort: ");
         tmp = arr.clone();
-        selectionSort selectionSort = new selectionSort();
-        selectionSort.sort(tmp);
+        SelectionSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
         System.out.println("Insertion sort: ");
         tmp = arr.clone();
-        insertionSort insertionSort = new insertionSort();
-        insertionSort.sort(tmp);
+        InsertionSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
         System.out.println("Merge sort (Recursive): ");
         tmp = arr.clone();
-        mergeSort mergeSort = new mergeSort();
-        mergeSort.sort(tmp);
+        MergeSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
         System.out.println("Merge sort (Iterative): ");
         tmp = arr.clone();
-        mergeSort.iterativeSort(tmp);
+        MergeSort.iterativeSort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
@@ -71,6 +65,17 @@ public class Main {
             root = treeSort.insert_recursive(root,i);
         }
         treeSort.sort(root,arrayList);
-        System.out.println("Sorted: " + (Arrays.equals(sorted, arrayList.stream().mapToInt(i -> i).toArray())));
+        System.out.println("Sorted: " + (Arrays.equals(sorted, arrayList.stream().mapToInt(i -> i).toArray())) + "\n");
+
+        System.out.println("Quick sort (Recursively): ");
+        tmp = arr.clone();
+        QuickSort.sort(tmp, 0 , tmp.length-1);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
+        System.out.println("Counting sort: ");
+        tmp = arr.clone();
+        CountingSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
     }
 }

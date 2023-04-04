@@ -39,7 +39,9 @@ public class TreeSort {
 
 
     public void sort(Node root, ArrayList<Integer> out){
-
+        /*
+         * This is the function that will sort the array using tree sort.
+         */
         if (root != null){
             sort(root.left,out);
             for(int i = 0; i<root.count; i++) {
