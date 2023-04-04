@@ -1,6 +1,10 @@
-public class selectionSort {
+public class SelectionSort {
 
-    public void sort(int[] arr){
+    static void sort(int[] arr){
+        /*
+         * This is the function that will sort the array using selection sort. Selection sort works by finding the
+         * smallest element from the unsorted side and placing it in the correct place by swapping.
+         */
         for (int i = 0;i<arr.length;i++){
             int minidx = i;
             for (int j = i;j<arr.length;j++){
@@ -15,7 +19,7 @@ public class selectionSort {
     }
 
     public static void main(String[] args) {
-        selectionSort selectionSort = new selectionSort();
+        SelectionSort selectionSort = new SelectionSort();
     }
 
 }

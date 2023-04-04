@@ -1,8 +1,15 @@
 import java.util.Arrays;
 
-public class bubbleSort {
+public class BubbleSort {
+    /*
+     * This class is used to sort using the bubble sort sorting algorithm. It works by comparing adjacent elements and
+     * swapping them if they're in the wrong order.
+     */
 
-    public void bubbleSort (int[] arr){
+    static void sort(int[] arr){
+        /*
+         * This is the function that will sort the array using bubble sort.
+         */
         for (int i =0;i<arr.length;i++) {
             for (int j = i; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
@@ -14,8 +21,10 @@ public class bubbleSort {
         }
     }
 
-
-    public void bubbleSortEarlyExit (int[] arr){
+    static void sortEarlyExit(int[] arr){
+        /*
+         * This is the function that will sort the array using bubble sort with an early exit clauses.
+         */
         for (int i =0;i<arr.length;i++) {
             boolean swaps = false;
             for (int j = i; j < arr.length; j++) {
@@ -33,9 +42,8 @@ public class bubbleSort {
     }
 
     public static void main(String[] args) {
-        bubbleSort bubbleSort = new bubbleSort();
         int[] arr = new int[]{3,6,3,2,6,8,4,2,1};
-        bubbleSort.bubbleSort(arr);
+        BubbleSort.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 

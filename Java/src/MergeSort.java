@@ -2,9 +2,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class mergeSort {
+public class MergeSort {
+    /*
+     * This class is used to sort using the merge sorting algorithm. It works by splitting the array into subarrays
+     * then sorting the subarrays and merging them until it is completed.
+     */
 
-    public void sort(int[] arr){
+    static void sort(int[] arr){
+        /*
+         * This is the function that will sort the array using recursive merge sort.
+         */
         if (arr.length < 2) {
             return;
         }
@@ -37,7 +44,10 @@ public class mergeSort {
         }
     }
 
-    public void iterativeSort(int arr[]){
+    static void iterativeSort(int[] arr){
+        /*
+         * This is the function that will sort the array using iterative merge sort.
+         */
 
         if (arr.length <= 1) {
             return;
@@ -84,13 +94,12 @@ public class mergeSort {
 
     public static void main(String[] args) {
 
-        mergeSort mergeSort = new mergeSort();
         int[] arr = new int[]{3,6,3,2,6,8,4,2,1};
-        mergeSort.sort(arr);
+        MergeSort.sort(arr);
         System.out.println(Arrays.toString(arr));
 
         arr = new int[]{3,6,3,2,6,8,4,2,1,45,3,56,657};
-        mergeSort.iterativeSort(arr);
+        MergeSort.iterativeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
