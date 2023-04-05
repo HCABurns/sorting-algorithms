@@ -27,7 +27,7 @@ def insert_recursive(root,val):
     return root
 
 
-def tree_sort(root,out):
+def treeSort(root,out):
     """
     This is the tree sort algorithm. Tree sort works by constucting a binary tree and traverses it in order.
     A count has been added to allow for duplicate values.
@@ -46,10 +46,10 @@ def tree_sort(root,out):
     arr - Array returned.
     """
     if root != None:
-        tree_sort(root.left,out)
+        treeSort(root.left,out)
         for _ in range(root.count):
             out.append(root.val)
-        tree_sort(root.right,out)
+        treeSort(root.right,out)
         return out
 
 if __name__ == "__main__":
@@ -58,5 +58,5 @@ if __name__ == "__main__":
     out = []
     for i in range(len(arr)):
         root = insert_recursive(root,arr[i])
-    tree_sort(root,out)
+    treeSort(root,out)
     print(out)
