@@ -77,5 +77,15 @@ public class Main {
         CountingSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+
+
+
+
+        // ENSURE THAT BOGO SORT IS LAST DUE TO THE LONG TIME COMPLEXITY!
+        System.out.println("Bogo sort: ");
+        tmp = arr.clone();
+        BogoSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
     }
 }
