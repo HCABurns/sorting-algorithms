@@ -77,7 +77,11 @@ public class Main {
         CountingSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
-
+        System.out.println("Bucket sort: ");
+        tmp = arr.clone();
+        int buckets = 20;
+        BucketSort.sort(tmp,buckets);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
 
 
