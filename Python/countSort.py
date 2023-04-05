@@ -1,4 +1,4 @@
-def counting_sort(arr):
+def countSort(arr):
     """
     This is the bubble sort algorithm. Counting sort works by counting the number of instances and using keys to work out the output.
     Time complexity:
@@ -39,4 +39,4 @@ def counting_sort(arr):
 
 if __name__ == "__main__":
     arr = [1,4,1,2,7,5,2,435,34,56,34,345,6]
-    print(counting_sort(arr))
+    print(countSort(arr))
