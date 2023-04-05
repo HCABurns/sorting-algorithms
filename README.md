@@ -15,15 +15,16 @@ Alogithms will be tested by using execution time. The algorithms will be tested 
 The algorithms that have been chosen are a mix of the most commonly used sorting algorithms. A variety of sorting methods are being tested, such as: partitioning, merging, insertion, exchange, and selection. Algorithms will be tested using iterative and recursive methods if available to compare if there is any differences.
 
 Algorithms that have been implemented are:
-* Bubble sort (Python, Java, C++)
-* Bubble sort with early exit (Python, Java, C++)
-* Selection sort (Python, Java, C++)
+* Bubble Sort (Python, Java, C++)
+* Bubble Sort With Early Exit (Python, Java, C++)
+* Selection Sort (Python, Java, C++)
 * Merge Sort (Recursive) (Python, Java)
 * Merge Sort (Iterative) (Python, Java)
-* Quick sort (Recursive) (Python, Java)
+* Quick Sort (Recursive) (Python, Java)
 * Tree Sort (Allows duplicates through count variable) (Python, Java)
-* Counting sort (Python, Java)
-* Bogo sort/Stupid Sort (Python,Java)
+* Counting Sort (Python, Java)
+* Bucket Sort (Python, Java)
+* Bogo Sort/Stupid Sort (Python, Java)
 
 ## Results
 
