@@ -1,6 +1,6 @@
 
 #Time import for measuring how fast the algorithms are.
-import time
+from time import time
 
 def bubbleSort(arr):
     """
@@ -62,17 +62,17 @@ def basicTestHarness():
     test1= [1,2,3,4,5,6,7,9,10]
     test2= [34,564,324,564,786,342,2,34,65]
     test3 = [10,9,8,7,6,5,4,3,2,1]
-    start = time.time()
+    start = time()
     sortedArr1 = bubbleSort(test1)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr1}")
-    start = time.time()
+    start = time()
     sortedArr2 = bubbleSort(test2)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr2}")
-    start = time.time()
+    start = time()
     sortedArr3 = bubbleSort(test3)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr3}")
 
 if __name__ == "__main__":

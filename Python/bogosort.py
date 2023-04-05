@@ -1,5 +1,5 @@
 #Time import for measuring how fast the algorithms are.
-import time
+from time import time
 #Import randint to get a random index to swap with.
 from random import randint
 
@@ -61,19 +61,19 @@ def basicTestHarness():
     test1= [1,2,3,4,5,6,7,9,10]
     test2= [34,564,324]
     test3 = [10,9,8,7,5,3,5,9,6,5]
-    start = time.time()
+    start = time()
     sortedArr1 = bogoSort(test1)
-    end = time.time()
+    end = time()
     print(test1)
     print(f"Sorted in {end-start}. Result: {sortedArr1}")
-    start = time.time()
+    start = time()
     sortedArr2 = bogoSort(test2)
-    end = time.time()
+    end = time()
     print(test2)
     print(f"Sorted in {end-start}. Result: {sortedArr2}")
-    start = time.time()
+    start = time()
     sortedArr3 = bogoSort(test3)
-    end = time.time()
+    end = time()
     print(test3)
     print(f"Sorted in {end-start}. Result: {sortedArr3}")
 

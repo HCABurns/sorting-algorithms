@@ -1,4 +1,4 @@
-import time
+from time import time
 from bubbleSort import bubbleSort
 from bubbleSort import bubbleSortEarlyExit
 from insertionSort import insertionSort
@@ -20,13 +20,13 @@ if __name__ == "__main__":
     results = []
     #Execute functions using generated array
     for func in funcs:
-        start = time.time()
+        start = time()
         if func.__name__ == "quickSort":
             if dataSize<=1000:
                 func(copy.deepcopy(arr),0,len(arr)-1)
         else:
             sort = func(copy.deepcopy(arr))
-        end = time.time()
+        end = time()
         if sort ==sorted(arr):
             results.append((end-start,func))
         else:
