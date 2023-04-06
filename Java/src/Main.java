@@ -83,6 +83,11 @@ public class Main {
         BucketSort.sort(tmp,buckets);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Odd-Even sort: ");
+        tmp = arr.clone();
+        oddEvenSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
 
 
         // ENSURE THAT BOGO SORT IS LAST DUE TO THE LONG TIME COMPLEXITY!
