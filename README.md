@@ -24,6 +24,7 @@ Algorithms that have been implemented are:
 * Tree Sort (Allows duplicates through count variable) (Python, Java)
 * Counting Sort (Python, Java)
 * Bucket Sort (Python, Java)
+* Odd-Even Sort (Python, Java)
 * Bogo Sort/Stupid Sort (Python, Java)
 
 ## Results
