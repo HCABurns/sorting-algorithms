@@ -25,6 +25,7 @@ Algorithms that have been implemented are:
 * Counting Sort (Python, Java)
 * Bucket Sort (Python, Java)
 * Odd-Even Sort (Python, Java)
+* Pigeonhole Sort (Python, Java)
 * Bogo Sort/Stupid Sort (Python, Java)
 
 ## Results
