@@ -83,6 +83,11 @@ public class Main {
         BucketSort.sort(tmp,buckets);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Radix sort: ");
+        tmp = arr.clone();
+        RadixSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
         System.out.println("Odd-Even sort: ");
         tmp = arr.clone();
         oddEvenSort.sort(tmp);

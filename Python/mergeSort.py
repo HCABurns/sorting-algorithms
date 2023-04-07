@@ -1,4 +1,4 @@
-import time
+from time import time
 
 def mergeSort(arr):
     """
@@ -111,31 +111,31 @@ def basicTestHarness():
     test2= [34,564,324,564,786,342,2,34,65]
     test3 = test1[::-1]
     print("Recursive merge sort:")
-    start = time.time()
+    start = time()
     sortedArr1 = mergeSort(test1)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr1}")
-    start = time.time()
+    start = time()
     sortedArr2 = mergeSort(test2)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr2}")
-    start = time.time()
+    start = time()
     sortedArr3 = mergeSort(test3)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr3}")
 
     print("Iterative merge sort:")
-    start = time.time()
+    start = time()
     sortedArr1 = mergeSortIterative(test1)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr1}")
-    start = time.time()
+    start = time()
     sortedArr2 = mergeSortIterative(test2)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr2}")
-    start = time.time()
+    start = time()
     sortedArr3 = mergeSortIterative(test3)
-    end = time.time()
+    end = time()
     print(f"Sorted in {end-start}. Result: {sortedArr3}")
 
 if __name__ == "__main__":
