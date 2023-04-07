@@ -23,6 +23,7 @@ Algorithms that have been implemented are:
 * Quick Sort (Recursive) (Python, Java)
 * Tree Sort (Allows duplicates through count variable) (Python, Java)
 * Counting Sort (Python, Java)
+* Radix Sort (Python, Java)
 * Bucket Sort (Python, Java)
 * Odd-Even Sort (Python, Java)
 * Pigeonhole Sort (Python, Java)
