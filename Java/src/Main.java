@@ -98,6 +98,11 @@ public class Main {
         PigeonholeSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Shell sort: ");
+        tmp = arr.clone();
+        ShellSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
 
 
         // ENSURE THAT BOGO SORT IS LAST DUE TO THE LONG TIME COMPLEXITY!
