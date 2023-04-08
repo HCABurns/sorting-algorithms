@@ -103,6 +103,11 @@ public class Main {
         ShellSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Pancake sort: ");
+        tmp = arr.clone();
+        PancakeSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
 
 
         // ENSURE THAT BOGO SORT IS LAST DUE TO THE LONG TIME COMPLEXITY!
