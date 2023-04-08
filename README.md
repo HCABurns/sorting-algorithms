@@ -18,6 +18,8 @@ Algorithms that have been implemented are:
 * Bubble Sort (Python, Java, C++)
 * Bubble Sort With Early Exit (Python, Java, C++)
 * Selection Sort (Python, Java, C++)
+* Insertion Sort (Python, Java)
+* Shell Sort (Python, Java)
 * Merge Sort (Recursive) (Python, Java)
 * Merge Sort (Iterative) (Python, Java)
 * Quick Sort (Recursive) (Python, Java)
