@@ -113,6 +113,11 @@ public class Main {
         GnomeSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Cocktail sort: ");
+        tmp = arr.clone();
+        CocktailSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
 
 
 
