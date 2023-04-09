@@ -108,6 +108,12 @@ public class Main {
         PancakeSort.sort(tmp);
         System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
 
+        System.out.println("Gnome sort: ");
+        tmp = arr.clone();
+        GnomeSort.sort(tmp);
+        System.out.println("Sorted: " + (Arrays.equals(sorted,tmp)) + "\n");
+
+
 
 
         // ENSURE THAT BOGO SORT IS LAST DUE TO THE LONG TIME COMPLEXITY!
