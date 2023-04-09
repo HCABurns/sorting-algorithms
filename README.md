@@ -31,6 +31,7 @@ Algorithms that have been implemented are:
 * Pigeonhole Sort (Python, Java)
 * Pancake Sort (Python, Java)
 * Gnome Sort (Python, Java)
+* Cocktail Sort (Python, Java)
 * Bogo Sort/Stupid Sort (Python, Java)
 
 ## Results
