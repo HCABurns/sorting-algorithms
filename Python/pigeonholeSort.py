@@ -40,6 +40,7 @@ def pigeonholeSort(arr):
             arr[i] = count + minVal
             i += 1
 
+    return arr
              
 def basicTestHarness():
     """
