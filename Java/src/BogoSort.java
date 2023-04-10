@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class BogoSort {
@@ -44,6 +45,10 @@ public class BogoSort {
 
 
     public static void main(String[] args) {
+
+        int[] arr = new int[]{3,6,3,2,6,4,32,5};
+        BogoSort.sort(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 }

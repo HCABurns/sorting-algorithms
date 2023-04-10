@@ -9,14 +9,36 @@ from bucketSort import bucketSort
 from quickSort import quickSort
 from countSort import countSort
 import treeSort
+
+from cocktailSort import cocktailSort
+from gnomeSort import gnomeSort
+from oddEvenSort import oddEvenSort
+from pancakeSort import pancakeSort
+from pigeonholeSort import pigeonholeSort
+from radixSort import radixSort
+from shellSort import shellSort
+from bogoSort import bogoSort
+
+
 from dataGenerator import generateDataset
 import copy
 
-funcs = [bubbleSort,bubbleSortEarlyExit,insertionSort,selectionSort,mergeSort,mergeSortIterative,quickSort,countSort,bucketSort,treeSort.treeSort]
+funcs = [bubbleSort,bubbleSortEarlyExit,insertionSort,selectionSort,mergeSort,mergeSortIterative,
+         quickSort,countSort,bucketSort,treeSort.treeSort, cocktailSort,gnomeSort,oddEvenSort,
+         pancakeSort, pigeonholeSort,radixSort,shellSort]
 #bogo sort is not added due to the long exectuion time for large data.
-if __name__ == "__main__":
+
+
+def execute():
+    """
+    Run an experiment and return the results.
+
+    Return
+    -----------
+    list - An odered list of tuples containing the name and execution time for a specific function.
+    """
     #Generate array
-    dataSize = 999
+    dataSize = 5000
     minValue = 0
     maxValue = 100000
     arr = generateDataset(dataSize,minValue,maxValue) 
@@ -42,8 +64,27 @@ if __name__ == "__main__":
             results.append((end-start,func))
         else:
             print(func.__name__, " failed to sort!")
+    return sorted(results,key=lambda x:x[0])
 
-    #Print results in order of least execution time.
-    results = sorted(results,key=lambda x:x[0])
-    for time,func in results:
-        print(str(func.__name__),f"- in {round(time,3)}s")
+if __name__ == "__main__":
+    repitions = 20
+    rankings = {}
+    times = {}
+
+    #Execute the sorting algorithms *repitions* number of times.
+    for i in range(repitions):
+        results = execute()
+        for rank,pair in enumerate(results,1):
+            executionTime,name = pair[0], pair[1]
+            if rankings.get(name,False) == False:
+                rankings[name] = rank
+                times[name] = executionTime
+            else:
+                rankings[name] += rank
+                times[name] += executionTime
+
+    #Print results in average ranking.    
+    for name,ranking in sorted(rankings.items(),key=lambda x:x[1]):
+        
+        print(f"| {round(ranking/repitions,2)} | {str(name.__name__)} | {round(times[name]/repitions,2)} |" )
+        #print(str(name.__name__),f"- {round(ranking/repitions,2)} - {round(times[name]/repitions,2)}")
