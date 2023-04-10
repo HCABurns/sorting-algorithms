@@ -36,4 +36,35 @@ Algorithms that have been implemented are:
 
 ## Results
 
-Results pending...
+This section will display the results of the experiments. There are two key pieces of information that is being evaluated in these experiments which are: 
+
+**Average Ranking** - This is the average rank the algorithm achieved when sorting the list. A rank is provided regarding the speed that the algorithm sorts a given list compared to the other algorithms. A rank of 1 is provided to the quickest algorithm and is incremented by 1.
+
+**Execution Time** - This is the time taken for the algorithm to return the sorted list.
+
+An experiment consists of all the sorting algorithms sorted the **same** list and then ranking them based on the execution time. The size of the array is randomly selected from between 5000 and 20,000. This process is repeated many times and the results are averaged to produce results. These can be seen below:
+
+### Python Results:
+
+| Avg. Ranking  | Algortihm Name| Avg. Execution time (ms)| 
+| ------------- | ------------- | ------------------------|
+| 1.0 | quickSort | 0.0 |
+| 2.0 | bucketSort | 0.01 |
+| 3.33 | radixSort | 0.01 |
+| 3.67 | mergeSortIterative | 0.01 |
+| 5.0 | pigeonholeSort | 0.01 |
+| 6.33 | mergeSort | 0.01 |
+| 6.67 | treeSort | 0.01 |
+| 8.0 | shellSort | 0.01 |
+| 9.0 | countSort | 0.02 |
+| 10.0 | selectionSort | 0.07 |
+| 11.0 | insertionSort | 0.09 |
+| 13.0 | bubbleSort | 0.18 |
+| 13.0 | bubbleSortEarlyExit | 0.18 |
+| 13.0 | oddEvenSort | 0.18 |
+| 15.0 | pancakeSort | 0.26 |
+| 16.0 | cocktailSort | 0.28 |
+| 17.0 | gnomeSort | 0.31 |
+| 18.0 | bogoSort | N/A |
+
+*note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
