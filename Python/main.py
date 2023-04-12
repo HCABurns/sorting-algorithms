@@ -38,7 +38,7 @@ def execute():
     list - An odered list of tuples containing the name and execution time for a specific function.
     """
     #Generate array
-    dataSize = 5000
+    dataSize = 50000
     minValue = 0
     maxValue = 100000
     arr = generateDataset(dataSize,minValue,maxValue) 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     times = {}
 
     #Execute the sorting algorithms *repitions* number of times.
-    for i in range(repitions):
+    for i in range(1,repitions+1):
         results = execute()
         for rank,pair in enumerate(results,1):
             executionTime,name = pair[0], pair[1]
@@ -82,6 +82,7 @@ if __name__ == "__main__":
             else:
                 rankings[name] += rank
                 times[name] += executionTime
+        print(f"Repition {i} finished!")
 
     #Print results in average ranking.    
     for name,ranking in sorted(rankings.items(),key=lambda x:x[1]):
