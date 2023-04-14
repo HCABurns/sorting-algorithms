@@ -46,7 +46,7 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 
 ### Python Results:
 
-| Avg. Ranking  | Algortihm Name| Avg. Execution time (ms)| 
+| Avg. Ranking  | Algortihm Name| Avg. Execution time (s)| 
 | ------------- | ------------- | ------------------------|
 | 1.0 | quickSort | 0.0 |
 | 2.0 | bucketSort | 0.01 |
@@ -66,5 +66,30 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 | 16.0 | cocktailSort | 0.28 |
 | 17.0 | gnomeSort | 0.31 |
 | 18.0 | bogoSort | N/A |
+
+*note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
+
+### Java Experiment 
+
+| Avg. Ranking  | Algortihm Name| Avg. Execution time (s)| 
+| ------------- | ------------- | ------------------------|
+| 1.0| QuickSort|0.0 | 1.0| QuickSort|0.0 | 
+| 2.0| RadixSort|0.0 |
+| 3.0| MergeSort|0.0 |
+| 4.0| ShellSort|0.01 |
+| 5.0| TreeSort|0.01 |
+| 6.0| PideonholeSort|0.01 |
+| 7.0| CountingSort|0.01 |
+| 8.0| BucketSort|0.02 |
+| 9.0| MergeSortIterative|0.02 |
+| 10.0| InsertionSort|0.02 |
+| 11.0| SelectionSort|0.2 |
+| 12.0| PancakeSort|0.2 |
+| 13.0| GnomeSort|0.25 |
+| 14.0| OddEvenSort|0.29 |
+| 15.0| CocktailSort|0.29 |
+| 16.0| BubbleSortEarlyExit|0.33 |
+| 17.0| BubbleSort|0.4 |
+| 18.0| BogoSort | N/A
 
 *note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
