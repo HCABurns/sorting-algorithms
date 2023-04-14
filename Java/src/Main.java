@@ -1,6 +1,4 @@
-import java.sql.Time;
 import java.util.*;
-import java.util.function.LongToDoubleFunction;
 
 public class Main {
 
@@ -10,11 +8,11 @@ public class Main {
 
     static int[] generateArr(){
 
-        int[] arr = new int[1000];
+        int[] arr = new int[20000];
         Random random = new Random();
 
         for (int i = 0;i<arr.length;i++){
-            arr[i] = random.nextInt(5000);
+            arr[i] = random.nextInt(2000000);
         }
         return arr;
 
@@ -194,22 +192,23 @@ public class Main {
         algNumber+=1;
 
         // Tree sort
+
         tmp = arr.clone();
         start = System.nanoTime();
         algName[algNumber] = "TreeSort";
         TreeSort.Node root = null;
         TreeSort treeSort = new TreeSort();
-        for (int i:tmp){
-            root = treeSort.insert_recursive(root,i);
+        for (int val:tmp){
+            root = treeSort.insert_recursive(root,val);
         }
         ArrayList<Integer> arrayList = new ArrayList<>();
         treeSort.sort(root,arrayList);
-        if (Arrays.equals(sorted,tmp)){
+        if (Arrays.equals(sorted, arrayList.stream().mapToInt(i -> i).toArray())){
             executionTime[algNumber] = System.nanoTime() - start;
         }
         algNumber+=1;
 
-        System.out.println(Arrays.toString(executionTime));
+
         for(int reps = 1; reps<=this.algAmount;reps++){
             int idx = 0;
             for (int i =0; i<this.algAmount;i++) {
@@ -227,13 +226,54 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int repititions = 5;
+        // Run the experiments and save a running total of rank and execution time.
+        int repititions = 1;
         Main main = new Main();
-        HashMap<String,Double[]> out = main.experiment();
-        for(Map.Entry<String, Double[]> entry : out.entrySet()) {
-            String key = entry.getKey();
+        HashMap<String, Double[]> results = new HashMap<>();
+        for (int i = 0; i<repititions;i++) {
+            // Get the results
+            HashMap<String, Double[]> out = main.experiment();
+            // Go through each results and update the values.
+            for (Map.Entry<String, Double[]> entry : out.entrySet()) {
+                String algName = entry.getKey();
+                Double[] value = entry.getValue();
+                if (results.containsKey(algName)){
+                    results.put(algName, new Double[]{(results.get(algName)[0] + value[0]),
+                            (results.get(algName)[1] + value[1])});
+                }
+                else{
+                    results.put(algName,value);
+                }
+            }
+        }
+
+
+        // Convert total to an average
+        for(Map.Entry<String, Double[]> entry : results.entrySet()) {
+            String algName = entry.getKey();
             Double[] value = entry.getValue();
-            System.out.println(key + " " + Arrays.toString(value));
+            results.put(algName, new Double[]{results.get(algName)[0]/repititions,
+                    results.get(algName)[1]/repititions});
+        }
+
+        // Sort the hashmap and print out in the correct order based on average rank.
+        Set<Map.Entry<String, Double[]>> entries = results.entrySet();
+        Comparator<Map.Entry<String, Double[]>> valueComparator = new Comparator<Map.Entry<String,Double[]>>() {
+            @Override
+            public int compare(Map.Entry<String, Double[]> o1, Map.Entry<String, Double[]> o2) {
+                return o1.getValue()[0].compareTo(o2.getValue()[0]);
+            }
+        };
+
+        List<Map.Entry<String, Double[]>> listOfEntries = new ArrayList<Map.Entry<String, Double[]>>(entries);
+        // sorting HashMap by values using comparator
+        Collections.sort(listOfEntries, valueComparator);
+
+
+        for(Map.Entry<String, Double[]> entry : listOfEntries) {
+            String algName = entry.getKey();
+            Double[] value = entry.getValue();
+            System.out.println("| " + value[0] + "| " + algName + "|" + ((int)Math.floor(value[1])/Math.pow(10,9)) + " |");
         }
 
         /*
