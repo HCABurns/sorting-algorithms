@@ -94,6 +94,6 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 
 *note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
 
-### Differences
+### Analysis
 
 Pending investigation.
