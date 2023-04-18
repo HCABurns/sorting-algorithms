@@ -9,7 +9,6 @@ public class PigeonholeSort {
         int max = Arrays.stream(arr).max().getAsInt();
         int min = Arrays.stream(arr).min().getAsInt();
         int range = max - min + 1;
-        System.out.println(range);
 
         // Populate pigeonholes.
         int[] holes = new int[range];
