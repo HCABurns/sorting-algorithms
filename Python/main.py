@@ -38,7 +38,7 @@ def execute():
     list - An odered list of tuples containing the name and execution time for a specific function.
     """
     #Generate array
-    dataSize = 50000
+    dataSize = 20000
     minValue = 0
     maxValue = 100000
     arr = generateDataset(dataSize,minValue,maxValue) 
@@ -47,8 +47,8 @@ def execute():
     for func in funcs:
         start = time()
         if func.__name__ == "quickSort":
-            if dataSize<=1000:
-                func(copy.deepcopy(arr),0,len(arr)-1)
+            #if dataSize<=1000:
+            func(copy.deepcopy(arr),0,len(arr)-1)
         elif func.__name__ == "bucketSort":
             sort = func(copy.deepcopy(arr),100)
         elif func.__name__ == "treeSort":
@@ -67,7 +67,7 @@ def execute():
     return sorted(results,key=lambda x:x[0])
 
 if __name__ == "__main__":
-    repitions = 20
+    repitions = 10
     rankings = {}
     times = {}
 
@@ -87,5 +87,5 @@ if __name__ == "__main__":
     #Print results in average ranking.    
     for name,ranking in sorted(rankings.items(),key=lambda x:x[1]):
         
-        print(f"| {round(ranking/repitions,2)} | {str(name.__name__)} | {round(times[name]/repitions,2)} |" )
+        print(f"| {round(ranking/repitions,2)} | {str(name.__name__)} | {round(times[name]*1000/repitions,2)} |" )
         #print(str(name.__name__),f"- {round(ranking/repitions,2)} - {round(times[name]/repitions,2)}")

@@ -8,11 +8,11 @@ public class Main {
 
     static int[] generateArr(){
 
-        int[] arr = new int[20000];
+        int[] arr = new int[50000];
         Random random = new Random();
 
         for (int i = 0;i<arr.length;i++){
-            arr[i] = random.nextInt(2000000);
+            arr[i] = random.nextInt(100000);
         }
         return arr;
 
@@ -112,7 +112,7 @@ public class Main {
         }
         algNumber+=1;
 
-        // Merge Sort
+        // Merge Sort Recursively
         tmp = arr.clone();
         start = System.nanoTime();
         algName[algNumber] = "MergeSort";
@@ -227,10 +227,10 @@ public class Main {
     public static void main(String[] args) {
 
         // Run the experiments and save a running total of rank and execution time.
-        int repititions = 1;
+        int repetition = 10;
         Main main = new Main();
         HashMap<String, Double[]> results = new HashMap<>();
-        for (int i = 0; i<repititions;i++) {
+        for (int i = 0; i<repetition;i++) {
             // Get the results
             HashMap<String, Double[]> out = main.experiment();
             // Go through each results and update the values.
@@ -245,16 +245,17 @@ public class Main {
                     results.put(algName,value);
                 }
             }
+            System.out.println("End of Repetition" + i);
         }
 
 
         // Convert total to an average
         for(Map.Entry<String, Double[]> entry : results.entrySet()) {
             String algName = entry.getKey();
-            Double[] value = entry.getValue();
-            results.put(algName, new Double[]{results.get(algName)[0]/repititions,
-                    results.get(algName)[1]/repititions});
+            results.put(algName, new Double[]{results.get(algName)[0]/repetition,
+                    results.get(algName)[1]/repetition});
         }
+
 
         // Sort the hashmap and print out in the correct order based on average rank.
         Set<Map.Entry<String, Double[]>> entries = results.entrySet();
@@ -273,7 +274,9 @@ public class Main {
         for(Map.Entry<String, Double[]> entry : listOfEntries) {
             String algName = entry.getKey();
             Double[] value = entry.getValue();
-            System.out.println("| " + value[0] + "| " + algName + "|" + ((int)Math.floor(value[1])/Math.pow(10,9)) + " |");
+            System.out.println("| " + value[0]
+                    + "| " + algName
+                    + "|" + (double)Math.round((Math.floor(value[1])/Math.pow(10,9))*100)/100 + " |");
         }
 
         /*
