@@ -42,7 +42,7 @@ This section will display the results of the experiments. There are two key piec
 
 **Execution Time** - This is the time taken for the algorithm to return the sorted list.
 
-An experiment consists of all the sorting algorithms sorted the **same** list and then ranking them based on the execution time. The size of the array is randomly selected from between 5000 and 20,000. This process is repeated many times and the results are averaged to produce results. These can be seen below:
+An experiment consists of all the sorting algorithms sorted the **same** list and then ranking them based on the execution time. The size of the array is of size 50,000. This process is repeated many times and the results are averaged to produce results. These can be seen below:
 
 ### Python Results:
 
