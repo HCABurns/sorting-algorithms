@@ -46,54 +46,83 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 
 ### Python Results:
 
-| Avg. Ranking  | Algortihm Name| Avg. Execution time (s)| 
+| Avg. Ranking  | Algortihm Name| Avg. Execution time (ms)| 
 | ------------- | ------------- | ------------------------|
-| 1.0 | quickSort | 0.0 |
-| 2.0 | bucketSort | 0.01 |
-| 3.33 | radixSort | 0.01 |
-| 3.67 | mergeSortIterative | 0.01 |
-| 5.0 | pigeonholeSort | 0.01 |
-| 6.33 | mergeSort | 0.01 |
-| 6.67 | treeSort | 0.01 |
-| 8.0 | shellSort | 0.01 |
-| 9.0 | countSort | 0.02 |
-| 10.0 | selectionSort | 0.07 |
-| 11.0 | insertionSort | 0.09 |
-| 13.0 | bubbleSort | 0.18 |
-| 13.0 | bubbleSortEarlyExit | 0.18 |
-| 13.0 | oddEvenSort | 0.18 |
-| 15.0 | pancakeSort | 0.26 |
-| 16.0 | cocktailSort | 0.28 |
-| 17.0 | gnomeSort | 0.31 |
-| 18.0 | bogoSort | N/A |
+| 1.0 | PigeonholeSort | 13.25 |
+| 2.0 | countSort | 20.55 |
+| 3.3 | RadixSort | 38.36 |
+| 3.7 | QuickSort | 39.26 |
+| 5.0 | MergeSortIterative | 46.86 |
+| 6.0 | MergeSort | 61.06 |
+| 7.0 | TreeSort | 70.01 |
+| 8.0 | BucketSort | 88.16 |
+| 9.0 | ShellSort | 99.52 |
+| 10.0 | SelectionSort | 7044.87 |
+| 11.0 | InsertionSort | 9355.77 |
+| 12.3 | BubbleSort | 19146.02 |
+| 12.9 | BubbleSortEarlyExit | 19294.98 |
+| 13.8 | OddEvenSort | 19606.49 |
+| 15.1 | PancakeSort | 27967.98 |
+| 15.9 | CocktailSort | 29808.96 |
+| 17.0 | GnomeSort | 32875.59 |
+| 18.0 | BogoSort | N/A |
 
 *note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
 
 ### Java Experiment 
 
-| Avg. Ranking  | Algortihm Name| Avg. Execution time (s)| 
+| Avg. Ranking  | Algortihm Name| Avg. Execution time (ms)| 
 | ------------- | ------------- | ------------------------|
-| 1.0| QuickSort|0.0 | 1.0| QuickSort|0.0 | 
-| 2.0| RadixSort|0.0 |
-| 3.0| MergeSort|0.0 |
-| 4.0| ShellSort|0.01 |
-| 5.0| TreeSort|0.01 |
-| 6.0| PideonholeSort|0.01 |
-| 7.0| CountingSort|0.01 |
-| 8.0| BucketSort|0.02 |
-| 9.0| MergeSortIterative|0.02 |
-| 10.0| InsertionSort|0.02 |
-| 11.0| SelectionSort|0.2 |
-| 12.0| PancakeSort|0.2 |
-| 13.0| GnomeSort|0.25 |
-| 14.0| OddEvenSort|0.29 |
-| 15.0| CocktailSort|0.29 |
-| 16.0| BubbleSortEarlyExit|0.33 |
-| 17.0| BubbleSort|0.4 |
+| 1.3| CountingSort|1.16 |
+| 1.8| PideonholeSort|1.19 |
+| 3.4| RadixSort|3.37 |
+| 4.1| QuickSort|3.08 |
+| 6.2| MergeSort|8.46 |
+| 6.5| ShellSort|6.09 |
+| 7.8| TreeSort|8.51 |
+| 9.0| MergeSortIterative|15.36 |
+| 10.0| InsertionSort|147.2 |
+| 10.5| CocktailSort|1134.5 |
+| 11.0| SelectionSort|586.8 |
+| 12.0| PancakeSort|1288.52 |
+| 13.2| OddEvenSort|1535.39 |
+| 13.8| GnomeSort|1502.41 |
+| 15.0| BucketSort|2147.48 |
+| 16.0| BubbleSortEarlyExit|2751.0 |
+| 17.0| BubbleSort|2815.0 |
 | 18.0| BogoSort | N/A
 
 *note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
 
 ### Analysis
 
-Pending investigation.
+#### Difference in rank between Java and Python.
+
+| Ranking Difference | Algortihm Name| 
+| ------------- | ------------- |
+| 0.0 | BogoSort | 
+| -0.1 | RadixSort | 
+| -0.2 | MergeSort |
+| -0.4 | QuickSort | 
+| 0.6 | OddEvenSort | 
+| 0.7 | countSort | 
+| -0.8 | PigeonholeSort |
+| -0.8 | TreeSort | 
+| -1.0 | SelectionSort | 
+| 1.0 | InsertionSort | 
+| 2.5 | ShellSort | 
+| -2.7 | BubbleSort | 
+| -3.1 | BubbleSortEarlyExit | 
+| 3.1 | PancakeSort |
+| 3.2 | GnomeSort | 
+| -4.0 | MergeSortIterative |
+| 5.4 | CocktailSort |
+| -9.0 | BucketSort | 
+
+*Note: Negative values indicate that the algorithm performed better than the other alogirthms in python. Positive indicates that the algorithm performed better than the other alogirthms in java* 
+
+Analysis Pending...
+
+#### Difference in execution time between Java and Python.
+
+Analysis Pending...
