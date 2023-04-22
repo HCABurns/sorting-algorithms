@@ -34,6 +34,8 @@ Algorithms that have been implemented are:
 * Cocktail Sort (Python, Java)
 * Bogo Sort/Stupid Sort (Python, Java)
 
+---
+
 ## Results
 
 This section will display the results of the experiments. There are two key pieces of information that is being evaluated in these experiments which are: 
@@ -81,22 +83,20 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 | 6.5| ShellSort|6.09 |
 | 7.8| TreeSort|8.51 |
 | 9.0| MergeSortIterative|15.36 |
-| 10.0| InsertionSort|147.2 |
-| 10.5| CocktailSort|1134.5 |
-| 11.0| SelectionSort|586.8 |
+| 10.0| InsertionSort|147.20 |
+| 10.5| CocktailSort|1134.50 |
+| 11.0| SelectionSort|586.80 |
 | 12.0| PancakeSort|1288.52 |
 | 13.2| OddEvenSort|1535.39 |
 | 13.8| GnomeSort|1502.41 |
 | 15.0| BucketSort|2147.48 |
-| 16.0| BubbleSortEarlyExit|2751.0 |
-| 17.0| BubbleSort|2815.0 |
+| 16.0| BubbleSortEarlyExit|2751.55 |
+| 17.0| BubbleSort|2815.05 |
 | 18.0| BogoSort | N/A
 
 *note: A 2 minute timeout was added and bogo sort did not manage to sort any list in any of the expierments* 
 
-### Analysis
-
-#### Difference in rank between Java and Python.
+### Difference in rank between Java and Python.
 
 | Ranking Difference | Algortihm Name| 
 | ------------- | ------------- |
@@ -121,8 +121,14 @@ An experiment consists of all the sorting algorithms sorted the **same** list an
 
 *Note: Negative values indicate that the algorithm performed better than the other alogirthms in python. Positive indicates that the algorithm performed better than the other alogirthms in java* 
 
-Analysis Pending...
+---
 
-#### Difference in execution time between Java and Python.
+### Analysis
 
-Analysis Pending...
+The highest average ranking algorithm between Java and Python was PigeonholeSort with 1.4. The worst case time complexity of pidgeonhole sort is O(n+k) where n is the number of items in the list and k is the range that those numbers can take. In this case n is 20,000 and k is 100,000. This gives a value of 120,000. This comes as a surprise, as generally, divide and conquer algorithms such as merge sort or quick sort are thought to be the best sorting algorithms. Using the values given for all the algorithms a O(nlogn) algorithm provides 285,754. This is 2.38x larger than that of the pigeonhole sort. 
+
+The worse performing algorithm for both, Java and Python, was BogoSort. This is due to the nature of the sorting algorithm randomly sorting the algoirthm and checking that it is in order. This is an extemely inefficient method of sorting a list and has a worst case time complexity that is infinite (It may never randomly select the correct order). However, the average time complexity is O(n*n!) which results in a value of 1.87E+162. This is an incredible large number which shows why the algoirthm is extemely poor and unlikely to sort the list in a reasonable amount of time. 
+
+The ranking of 10/17 of the algorithms are all within 1 rank between Java and Python. Of these 10 algorithms 6 performed better in Java, 3 peformed better in Python and 1 was equal ranked in both. The results of the average ranking provides 3 outliers. This includes: MergeSortIterative, CocktailSort and BucketSort. One reason for why BucketSort ranks better in Python than Java is that in the Java implementation the ArrayList structure was used which would increase runtime. 
+
+Out of the 17 algorithms tested, 13 performed better in Java and with 3 performing better in Python *(Note: BogoSort performed equal as it was unable to sort a single algoirthm in a reasonable amount of time)*. Programs are expected to perform better in Java than Python because Java is a complied language whereas Python is a interpretted langauge. 
