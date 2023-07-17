@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BucketSort {
-
     static void sort(int[] arr, int n){
 
         // Create buckets.
@@ -35,7 +34,6 @@ public class BucketSort {
         }
 
     }
-
     public static void main(String[] args) {
 
         int[] arr = new int[]{3,6,3,2,6,8,4,2,1};
