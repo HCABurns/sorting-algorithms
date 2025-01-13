@@ -19,9 +19,9 @@ public class Main {
     }
 
 
-    public HashMap<String,Double[]> experiment(){
+    public HashMap<String, long[]> experiment(){
         // Define required variables.
-        HashMap<String,Double[]> out = new HashMap<>();
+        HashMap<String,long[]> out = new HashMap<>();
         String[] algName = new String[this.algAmount];
         long[] executionTime = new long[this.algAmount];
         int[] arr = generateArr();
@@ -37,7 +37,8 @@ public class Main {
         algName[algNumber] = "BubbleSort";
         BubbleSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
+            System.out.println(executionTime[algNumber]);
         }
         algNumber+=1;
 
@@ -46,8 +47,9 @@ public class Main {
         start = System.nanoTime();
         algName[algNumber] = "BubbleSortEarlyExit";
         BubbleSort.sortEarlyExit(tmp);
+        System.out.println(Arrays.equals(sorted,tmp));
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -55,9 +57,9 @@ public class Main {
         tmp = arr.clone();
         start = System.nanoTime();
         algName[algNumber] = "BucketSort";
-        BucketSort.sort(tmp,30);
+        BucketSort.sort(tmp,100);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -67,7 +69,7 @@ public class Main {
         algName[algNumber] = "CocktailSort";
         CocktailSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -77,7 +79,7 @@ public class Main {
         algName[algNumber] = "CountingSort";
         CountingSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -88,7 +90,7 @@ public class Main {
         algName[algNumber] = "GnomeSort";
         GnomeSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -98,7 +100,7 @@ public class Main {
         algName[algNumber] = "InsertionSort";
         InsertionSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -108,7 +110,7 @@ public class Main {
         algName[algNumber] = "MergeSortIterative";
         MergeSort.iterativeSort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -118,7 +120,7 @@ public class Main {
         algName[algNumber] = "MergeSort";
         MergeSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -128,7 +130,7 @@ public class Main {
         algName[algNumber] = "OddEvenSort";
         oddEvenSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -138,7 +140,7 @@ public class Main {
         algName[algNumber] = "PancakeSort";
         PancakeSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -148,7 +150,7 @@ public class Main {
         algName[algNumber] = "PideonholeSort";
         PigeonholeSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -158,7 +160,7 @@ public class Main {
         algName[algNumber] = "QuickSort";
         QuickSort.sort(tmp,0,tmp.length-1);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -168,7 +170,8 @@ public class Main {
         algName[algNumber] = "RadixSort";
         RadixSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber++] = System.nanoTime() - start;
+            System.out.println("RADIX SORTED");
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
 
         // Selection sort
@@ -177,7 +180,7 @@ public class Main {
         algName[algNumber] = "SelectionSort";
         SelectionSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
@@ -187,12 +190,11 @@ public class Main {
         algName[algNumber] = "ShellSort";
         ShellSort.sort(tmp);
         if (Arrays.equals(sorted,tmp)){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
         // Tree sort
-
         tmp = arr.clone();
         start = System.nanoTime();
         algName[algNumber] = "TreeSort";
@@ -204,11 +206,11 @@ public class Main {
         ArrayList<Integer> arrayList = new ArrayList<>();
         treeSort.sort(root,arrayList);
         if (Arrays.equals(sorted, arrayList.stream().mapToInt(i -> i).toArray())){
-            executionTime[algNumber] = System.nanoTime() - start;
+            executionTime[algNumber] = (long)((System.nanoTime() - start) / Math.pow(10,6));
         }
         algNumber+=1;
 
-
+        System.out.println(Arrays.toString(algName));
         for(int reps = 1; reps<=this.algAmount;reps++){
             int idx = 0;
             for (int i =0; i<this.algAmount;i++) {
@@ -216,7 +218,8 @@ public class Main {
                     idx = i;
                 }
             }
-            out.put(algName[idx],new Double[]{(double) reps, (double) executionTime[idx]});
+            System.out.println(idx + " " + algName[idx] + " " + executionTime[idx]);
+            out.put(algName[idx],new long[]{(long) reps, executionTime[idx]});
             executionTime[idx] = Integer.MAX_VALUE;
         }
         // output is name -> [rank,exeTime]
@@ -229,16 +232,16 @@ public class Main {
         // Run the experiments and save a running total of rank and execution time.
         int repetition = 10;
         Main main = new Main();
-        HashMap<String, Double[]> results = new HashMap<>();
+        HashMap<String, long[]> results = new HashMap<>();
         for (int i = 0; i<repetition;i++) {
             // Get the results
-            HashMap<String, Double[]> out = main.experiment();
+            HashMap<String, long[]> out = main.experiment();
             // Go through each results and update the values.
-            for (Map.Entry<String, Double[]> entry : out.entrySet()) {
+            for (Map.Entry<String, long[]> entry : out.entrySet()) {
                 String algName = entry.getKey();
-                Double[] value = entry.getValue();
+                long[] value = entry.getValue();
                 if (results.containsKey(algName)){
-                    results.put(algName, new Double[]{(results.get(algName)[0] + value[0]),
+                    results.put(algName, new long[]{(results.get(algName)[0] + value[0]),
                             (results.get(algName)[1] + value[1])});
                 }
                 else{
@@ -250,33 +253,51 @@ public class Main {
 
 
         // Convert total to an average
-        for(Map.Entry<String, Double[]> entry : results.entrySet()) {
+        for(Map.Entry<String, long[]> entry : results.entrySet()) {
             String algName = entry.getKey();
-            results.put(algName, new Double[]{results.get(algName)[0]/repetition,
+            System.out.println(algName);
+            results.put(algName, new long[]{results.get(algName)[0]/repetition,
                     results.get(algName)[1]/repetition});
         }
 
 
         // Sort the hashmap and print out in the correct order based on average rank.
-        Set<Map.Entry<String, Double[]>> entries = results.entrySet();
-        Comparator<Map.Entry<String, Double[]>> valueComparator = new Comparator<Map.Entry<String,Double[]>>() {
+        Set<Map.Entry<String, long[]>> entries = results.entrySet();
+        Comparator<Map.Entry<String, long[]>> valueComparator = new Comparator<Map.Entry<String,long[]>>() {
             @Override
-            public int compare(Map.Entry<String, Double[]> o1, Map.Entry<String, Double[]> o2) {
-                return o1.getValue()[0].compareTo(o2.getValue()[0]);
+            public int compare(Map.Entry<String, long[]> o1, Map.Entry<String, long[]> o2) {
+                if (o1.getValue()[0]<o2.getValue()[0]){
+                    return -1;
+                }
+                else if (o1.getValue()[0]==o2.getValue()[0]){
+                    return 0;
+                }
+                return 1;
             }
         };
 
-        List<Map.Entry<String, Double[]>> listOfEntries = new ArrayList<Map.Entry<String, Double[]>>(entries);
+        List<Map.Entry<String, long[]>> listOfEntries = new ArrayList<Map.Entry<String, long[]>>(entries);
         // sorting HashMap by values using comparator
         Collections.sort(listOfEntries, valueComparator);
 
 
-        for(Map.Entry<String, Double[]> entry : listOfEntries) {
+        System.out.println(Arrays.toString(results.get("BubbleSort")));
+        System.out.println(Arrays.toString(results.get("BubbleSortEarlyExit")));
+
+        for(Map.Entry<String, long[]> entry : listOfEntries) {
             String algName = entry.getKey();
-            Double[] value = entry.getValue();
+            long[] value = entry.getValue();
+            //if (algName.equals("BubbleSort") || algName.equals("BubbleSortEarlyExit")){
+                //System.out.println("Ywaddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
             System.out.println("| " + value[0]
-                    + "| " + algName
-                    + "|" + (double)Math.round((Math.floor(value[1])/Math.pow(10,9))*100)/100 + " |");
+                        + "| " + algName
+                        + "|" + (double)Math.round((value[1])*100)/100 + " |");
+            //}
+            //else{
+            //    System.out.println("| " + value[0]
+            //            + "| " + algName
+            //            + "|" + (double)Math.round((Math.floor(value[1])/Math.pow(10,6))*100)/100 + " |");
+            //}
         }
 
         /*
